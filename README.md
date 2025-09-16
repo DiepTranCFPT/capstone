@@ -100,12 +100,6 @@ PUT /api/v1/admin/password-policy - Cập nhật policy mật khẩu
 7. Role-based Access Control
 8. CORS Configuration
 
-## Frontend Integration
-CORS được cấu hình cho:
-- http://localhost:3000 (React)
-- http://localhost:4200 (Angular)
-- http://localhost:8081 (Vue)
-
 ## Build & Run
 ```bash
 # Build
