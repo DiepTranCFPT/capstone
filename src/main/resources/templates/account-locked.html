@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cảnh Báo Tài Khoản Bị Khóa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .container {
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            padding: 20px;
+            margin-top: 20px;
+            border: 1px solid #ddd;
+        }
+        .warning {
+            color: #dc3545;
+            padding: 10px;
+            margin: 20px 0;
+            background-color: #ffe6e6;
+            border-radius: 5px;
+        }
+        .info {
+            background-color: #e7f3fe;
+            border-left: 6px solid #2196F3;
+            padding: 10px;
+            margin: 15px 0;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #666;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Cảnh Báo Bảo Mật</h2>
+        <p>Xin chào <span th:text="${firstName}">User</span>,</p>
+
+        <div class="warning">
+            <p><strong>Tài khoản của bạn đã tạm thời bị khóa</strong></p>
+            <p>Lý do: Đăng nhập sai mật khẩu nhiều lần (<span th:text="${attempts}">5</span> lần)</p>
+        </div>
+
+        <div class="info">
+            <p><strong>Thông tin chi tiết:</strong></p>
+            <ul>
+                <li>Thời gian khóa: <span th:text="${lockTime}">timestamp</span></li>
+                <li>Thời gian mở khóa: <span th:text="${unlockTime}">timestamp</span></li>
+                <li>Email: <span th:text="${email}">user@example.com</span></li>
+            </ul>
+        </div>
+
+        <p>Để bảo vệ tài khoản của bạn, chúng tôi đã tạm thời khóa quyền truy cập. Tài khoản sẽ tự động được mở khóa sau 24 giờ.</p>
+
+        <p>Nếu bạn không thực hiện các lần đăng nhập này, vui lòng:</p>
+        <ol>
+            <li>Kiểm tra lại thiết bị và mạng của bạn</li>
+            <li>Đổi mật khẩu ngay khi tài khoản được mở khóa</li>
+            <li>Bật xác thực 2 lớp nếu có thể</li>
+        </ol>
+
+        <p>Nếu cần hỗ trợ khẩn cấp, vui lòng liên hệ với quản trị viên.</p>
+
+        <div class="footer">
+            <p>Đây là email tự động. Vui lòng không trả lời email này.</p>
+            <p>© 2023 Your Company Name. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>
